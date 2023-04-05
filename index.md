@@ -1,6 +1,6 @@
 ---
 title: "Katy Miles"
-logo: catStat.png
+logo: picture.png
 description:
 ---
 
