@@ -1,5 +1,5 @@
 ---
-title: "Professor Whiskers"
+title: "Katy Miles"
 logo: catStat.png
 description:
 ---
