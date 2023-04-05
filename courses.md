@@ -1,12 +1,15 @@
-# Catnip College
-- STAT 101: Introduction to Feline Statistics
-- STAT 201: Bayesian Inference for Cat Behavior
-- STAT 301: Machine Learning for Cat Health
-# Cat State University
-- STAT 501: Advanced Topics in Feline Regression Models
-# Meow-vard University
-- MATH 101: Calculus for Cats
-Note: Course offerings are subject to change each semester. Please refer to the official course catalog for the most up-to-date information.
+# Colorado State University
+- STAT 540: Data Analysis and Regression
+- STAT 520: Introduction to Probability Theory
+- STAT 530: Mathematical Statistics
+- STAT 640: Design and Linear Modeling I
+# University of Illinois 
+- STAT 432
+- STAT 385
+- STAT 420
+- STAT 410
+- STAT 400
+- STAT 200
 
 
 
