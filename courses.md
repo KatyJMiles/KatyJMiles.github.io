@@ -3,6 +3,7 @@
 - STAT 520: Introduction to Probability Theory
 - STAT 530: Mathematical Statistics
 - STAT 640: Design and Linear Modeling I
+- STAT 555: Statistical Consulting Skills
 # University of Illinois 
 - STAT 432
 - STAT 385
