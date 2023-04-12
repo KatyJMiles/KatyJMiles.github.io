@@ -6,7 +6,7 @@ This work with Dr. Wade Fagen-Ulmschneider and Dr. Karle Flanagan was motivated 
 
 ### Undergraduate Senior Thesis
 
-This work with Dr. Wade Fagen-Ulmschneider and Dr. Karle Flanagan was inspired by the "Weather Radials"(http://www.weather-radials.com/) visualization. The motivation was to expand on the "Weather Radials" visualization of yearly temperature patterns by allowing the user to compare historical weather trends in cities and towns across the country. 
+This work with Dr. Wade Fagen-Ulmschneider and Dr. Karle Flanagan was inspired by the ["Weather Radials"](http://www.weather-radials.com/) visualization. The motivation was to expand on the "Weather Radials" visualization of yearly temperature patterns by allowing the user to compare historical weather trends in cities and towns across the country. 
 
 [<img width="115" alt="image" src="https://user-images.githubusercontent.com/130004911/230824576-39b675f1-e72b-453b-a525-cacdc356d3b1.png">](https://vis.cs.illinois.edu/weather/temperature-radial/)
 
