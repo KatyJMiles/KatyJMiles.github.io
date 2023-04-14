@@ -1,5 +1,10 @@
 ## University of Illinois 
 - STAT 107: [Data Science Discovery](https://discovery.cs.illinois.edu/) -  Lead Undergraduate Course Assistant 
+- MATH 227: Linear Algebra for Data Science - Assistant Course Developer/Course Assistant
 
 ## Colorado State University
-- STAT 201/204: Graduate Teaching Assistant 
+- STAT 201: General Statistics - Graduate Teaching Assistant 
+- STAT 204: Statistics with Business Applications - Graduate Teaching Assistant 
+
+## Awards
+- Second Place for Tutor of the Year: University of Illinois
