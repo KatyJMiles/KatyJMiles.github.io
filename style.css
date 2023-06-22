@@ -92,18 +92,18 @@ body {
   -ms-transform: translate(-50%, -50%)
 }
 
-.tabs .tabContent .row .radial:hover .image {
+.tabs .tabContent .row .radial:hover {
   opacity: 0.3;
 }
 
-.tabs .tabContent .row .wave:hover .image {
+.tabs .tabContent .row .wave:hover  {
   opacity: 0.3;
 }
 
-.tabs .tabContent .row:hover .wave_text {
+.tabs .tabContent .row .wave:hover .wave_text {
   opacity: 1;
 }
-.tabs .tabContent .row:hover .radial_text {
+.tabs .tabContent .row .radial:hover .radial_text {
   opacity: 1;
 }
 
