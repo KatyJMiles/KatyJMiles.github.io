@@ -49,12 +49,11 @@ body {
 }
 
 .tabs input[type="radio"]:checked + label {
-   color: #FCFAEC;
-   background: radial-gradient(ellipse, #eee 0, #f7f7f7, #FCFAEC 100%);    
+   color: #99B5C9;  
 }
 
 .wrapper .title label {
- color: #393A42;
+ color: #99B5C9;
  font-weight: 2000;
  font-family: 'Trebuchet MS', sans-serif;
  font-size:55px;
