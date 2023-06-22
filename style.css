@@ -71,7 +71,7 @@ body {
   backface-visibility: hidden;
 }
 
-.middle {
+.wave_text {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
@@ -81,15 +81,36 @@ body {
   -ms-transform: translate(-50%, -50%)
 }
 
+.radial_text {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
 .tabs .tabContent:hover .image {
   opacity: 0.3;
 }
 
-.tabs .tabContent:hover .middle {
+.tabs .tabContent:hover .wave_text {
+  opacity: 1;
+}
+.tabs .tabContent:hover .radial_text {
   opacity: 1;
 }
 
-.tabs .tabContent .middle .text {
+.tabs .tabContent .wave_text .text {
+  color: black;
+  font-size: 20px;
+  padding: 16px 32px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 2000;
+}
+
+.tabs .tabContent .radial_text .text {
   color: black;
   font-size: 20px;
   padding: 16px 32px;
