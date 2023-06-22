@@ -62,24 +62,16 @@ body {
  font-size:55px;
 }
 
-.tabs .tabContent .radialContent .image {
-  opacity: 1;
-  left: 150px;
-  width: 200px;
-  height: 120px;
+.tabs .tabContent .row {
+  opacity: 1;  
+  float: left;
+  width: 50%;
+  padding: 5px;
   transition: .5s ease;
   backface-visibility: hidden;
 }
 
-.tabs .tabContent .waveContent .image {
-  opacity: 1;
-  left: 450px;
-  width: 200px;
-  height: 120px;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-
+.
 .wave_text {
   transition: .5s ease;
   opacity: 0;
@@ -100,22 +92,22 @@ body {
   -ms-transform: translate(-50%, -50%)
 }
 
-.tabs .tabContent .waveContent:hover .image {
+.tabs .tabContent .row .radial:hover .image {
   opacity: 0.3;
 }
 
-.tabs .tabContent .radialContent:hover .image {
+.tabs .tabContent .row .wave:hover .image {
   opacity: 0.3;
 }
 
-.tabs .tabContent .waveContent:hover .wave_text {
+.tabs .tabContent .row:hover .wave_text {
   opacity: 1;
 }
-.tabs .tabContent .radialContent:hover .radial_text {
+.tabs .tabContent .row:hover .radial_text {
   opacity: 1;
 }
 
-.tabs .tabContent .waveContent .wave_text .text {
+.tabs .tabContent .row .wave_text .text {
   color: black;
   font-size: 20px;
   padding: 16px 32px;
@@ -123,7 +115,7 @@ body {
   font-weight: 2000;
 }
 
-.tabs .tabContent .radialContent .radial_text .text {
+.tabs .tabContent .row .radial_text .text {
   color: black;
   font-size: 20px;
   padding: 16px 32px;
