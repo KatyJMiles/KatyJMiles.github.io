@@ -37,7 +37,7 @@ body {
 .tabs .tabContent {
    width: 100%;
    padding: 20px;
-   background: #fff;
+   background: #393A42;
    order: 1;
    display: none;
 }
@@ -51,7 +51,7 @@ body {
 
 .tabs input[type="radio"]:checked + label {
    color: #90acd3;
-   background: radial-gradient(ellipse, #eee 0, #f7f7f7, #fff 100%);    
+   background: radial-gradient(ellipse, #eee 0, #f7f7f7, #393A42 100%);    
 }
 
 .wrapper .title label {
