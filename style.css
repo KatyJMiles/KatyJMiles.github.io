@@ -49,7 +49,7 @@ body {
 }
 
 .tabs input[type="radio"]:checked + label {
-   color: #90acd3;
+   color: #FCFAEC;
    background: radial-gradient(ellipse, #eee 0, #f7f7f7, #FCFAEC 100%);    
 }
 
