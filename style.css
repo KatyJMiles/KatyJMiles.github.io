@@ -1,5 +1,5 @@
 body {
-    background-color: #FCFAEC;
+    background-color: #FEFEF3;
 }
 
 .tabs {
@@ -36,7 +36,7 @@ body {
 .tabs .tabContent {
    width: 100%;
    padding: 50px;
-   background-color: #FCFAEC;
+   background-color: #FEFEF3;
    order: 1;
    display: none;
 }
