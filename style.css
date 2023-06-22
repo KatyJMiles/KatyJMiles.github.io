@@ -2,7 +2,6 @@ body {
     background-color: #FCFAEC;
 }
 
-
 .tabs {
     list-style: none;
    display: flex;
@@ -36,8 +35,8 @@ body {
 
 .tabs .tabContent {
    width: 100%;
-   padding: 20px;
-   background: #393A42;
+   padding: 50px;
+   background: #FCFAEC;
    order: 1;
    display: none;
 }
