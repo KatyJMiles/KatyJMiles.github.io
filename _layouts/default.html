@@ -15,9 +15,6 @@
         <div class="title">
           <label >Katy Miles</label>
         </div>
-        <div class="logo">
-          <img src="{{page.logo | relative_url}}" alt="Logo" style = "float:right; height:300px; margin: 100px" />
-        </div>
 
         <p>{{ page.description | default: site.github.project_tagline }}</p>
 
@@ -43,6 +40,9 @@
         <label for="tab1">About Me</label>
         <div class="tabContent">
           <zero-md id="rightAlign" src="aboutme.md"></zero-md>
+          <div class="logo">
+            <img src="{{page.logo | relative_url}}" alt="Logo" style = "float:left; height:300px; margin: 100px" />
+          </div>
         </div>
         <!-- ------------- ADD RESUME HERE  ----------- --> 
         <input type="radio" name="tabs" id="tab3"> 
