@@ -90,8 +90,8 @@ body {
 }
 
 .tabs .tabContent .middle .text {
-  background-color: #4CAF50;
-  color: white;
+  color: black;
   font-size: 16px;
   padding: 16px 32px;
+  font-family: 'Trebuchet MS', sans-serif;
 }
