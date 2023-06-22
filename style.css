@@ -62,8 +62,7 @@ body {
 
 .tabs .tabContent .row {
   opacity: 1;  
-  float: left;
-  width: 50%;
+  display: flex;
   padding: 5px;
   transition: .5s ease;
   backface-visibility: hidden;
