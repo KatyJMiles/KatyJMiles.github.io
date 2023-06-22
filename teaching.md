@@ -1,5 +1,5 @@
 ## University of Illinois 
-- STAT 107: [Data Science Discovery](https://discovery.cs.illinois.edu/) -  Lead Undergraduate Course Assistant 
+- STAT 107: <span style="color:#99B5C9">[Data Science Discovery](https://discovery.cs.illinois.edu/) <span>-  Lead Undergraduate Course Assistant 
 - MATH 227: Linear Algebra for Data Science - Assistant Course Developer/Course Assistant
 
 ## Colorado State University
