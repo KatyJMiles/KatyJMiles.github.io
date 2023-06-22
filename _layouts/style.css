@@ -1,19 +1,13 @@
-@media only screen and (min-width: 720px) {
-   .custom_section {
-   width: 600px;
- }
-}
-
-.tabs {
+tabs {
    width: 100%;
    display: flex;
    flex-wrap: wrap;
    padding: 5px;
 }
-.tabs input[type="radio"] {
+tabs input[type="radio"] {
    display: none;
 }
-.tabs label {
+tabs label {
  display: inline-block;
  margin: 0px;
  font-family: 'gill sans', sans-serif;
@@ -25,17 +19,17 @@
  border-radius: 15px;
 }
 
-.tabs label:before {
+tabs label:before {
  font-weight: normal;
  margin-right: 10px;
 }
 
-.tabs label:hover {
+tabs label:hover {
  color: #788075;
  cursor: pointer;
 }
 
-.tabs .tabContent {
+tabs .tabContent {
    width: 100%;
    padding: 20px;
    background: #fff;
