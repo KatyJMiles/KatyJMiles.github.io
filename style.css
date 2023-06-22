@@ -40,7 +40,6 @@ body {
    width: 100%;
    padding: 50px;
    background-color: #FEFEF3;
-   order: 1;
    display: none;
 }
 .tabs .tabContent h2 {
