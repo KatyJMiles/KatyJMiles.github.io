@@ -40,7 +40,6 @@ body {
    width: 100%;
    padding: 50px;
    background-color: #FEFEF3;
-   display: none;
 }
 .tabs .tabContent h2 {
    font-size: 3em;
@@ -93,10 +92,12 @@ body {
 
 .tabs .tabContent .row .radial:hover {
   opacity: 0.3;
+  cursor: pointer;
 }
 
 .tabs .tabContent .row .wave:hover  {
   opacity: 0.3;
+  cursor: pointer;
 }
 
 .tabs .tabContent .row .wave:hover .wave_text {
