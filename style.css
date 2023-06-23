@@ -40,6 +40,8 @@ body {
    width: 100%;
    padding: 50px;
    background-color: #FEFEF3;
+   display: none;
+   order: 1;
 }
 .tabs .tabContent h2 {
    font-size: 3em;
@@ -89,12 +91,12 @@ body {
   -ms-transform: translate(-50%, -50%)
 }
 
-.tabs .tabContent .row .radial:hover {
+.tabs .tabContent .row:hover .radial {
   opacity: 0.3;
   cursor: pointer;
 }
 
-.tabs .tabContent .row .wave:hover  {
+.tabs .tabContent .row:hover .wave  {
   opacity: 0.3;
   cursor: pointer;
 }
