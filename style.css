@@ -61,7 +61,7 @@ body {
  font-size:55px;
 }
 
-tabs. .tabContent .row {
+.tabs .tabContent .row {
   opacity: 1;  
   display: grid;
   grid-template-columns: 1fr 1fr;
