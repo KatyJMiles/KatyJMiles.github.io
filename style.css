@@ -68,8 +68,8 @@ body {
   transition: .5s ease;
   backface-visibility: hidden;
   display: grid;
-  grid-template-columns: 200px 200px;
-  column-gap: 8px;
+  grid-template-columns: 500px 500px;
+  column-gap: 2px;
 }
 
 
@@ -93,14 +93,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%)
-}
-
-.tabs .tabContent .row .radial .radialImage {
-  width: 50%
-}
-
-.tabs .tabContent .row .wave .waveImage {
-  width: 50%
 }
 
 
