@@ -65,8 +65,8 @@ body {
 .tabs .tabContent .row {
   opacity: 1;  
   display: grid;
-  float: left;
-  width: 50%;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
   padding: 5px;
   transition: .5s ease;
   backface-visibility: hidden;
