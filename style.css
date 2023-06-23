@@ -90,12 +90,12 @@ body {
   -ms-transform: translate(-50%, -50%)
 }
 
-.tabs .tabContent .radial:hover .radial {
+.tabs .tabContent .row .radial:hover {
   opacity: 0.3;
   cursor: pointer;
 }
 
-.tabs .tabContent .wave:hover .wave  {
+.tabs .tabContent .row .wave:hover {
   opacity: 0.3;
   cursor: pointer;
 }
