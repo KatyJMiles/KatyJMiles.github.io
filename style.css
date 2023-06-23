@@ -66,7 +66,7 @@ body {
   opacity: 1;  
   transition: .5s ease;
   backface-visibility: hidden;
-  float:left;
+  display: fix;
   width: 75%;
 }
 
