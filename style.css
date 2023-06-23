@@ -69,6 +69,7 @@ body {
   column-gap: 10px;
   transition: .5s ease;
   backface-visibility: hidden;
+  width: 100%;
 }
 
 .wave_text {
