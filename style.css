@@ -64,9 +64,9 @@ body {
 
 .tabs .tabContent .row {
   opacity: 1;  
-  display: flex;
   transition: .5s ease;
   backface-visibility: hidden;
+  float:left;
 }
 
 
