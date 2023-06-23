@@ -69,6 +69,7 @@ body {
   backface-visibility: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: calc(100vw - (100vw - 100%));
 }
 
 
