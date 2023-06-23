@@ -95,6 +95,15 @@ body {
   -ms-transform: translate(-50%, -50%)
 }
 
+.tabs .tabContent .row .radial .radialImage {
+  width: 50%
+}
+
+.tabs .tabContent .row .wave .waveImage {
+  width: 50%
+}
+
+
 .tabs .tabContent .row .radial:hover .radialImage {
   opacity: 0.3;
   cursor: pointer;
