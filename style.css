@@ -37,7 +37,6 @@ body {
 }
 
 .tabs .tabContent {
-   width: 100%;
    padding: 50px;
    background-color: #FEFEF3;
    display: none;
