@@ -3,6 +3,7 @@ a {
 }
 body {
     background-color: #FEFEF9;
+    width: calc(100vw - (100vw - 100%));
 }
 
 .tabs {
@@ -68,7 +69,6 @@ body {
   backface-visibility: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 75%;
 }
 
 
