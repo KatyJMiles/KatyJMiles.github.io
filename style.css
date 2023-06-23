@@ -70,6 +70,16 @@ body {
   backface-visibility: hidden;
 }
 
+.tabs .tabContent .row .wave {
+    height: 50%;
+    width: 50%;
+}
+
+.tabs .tabContent .row .radial {
+ height: 50%;
+ width: 50%;
+}
+
 .wave_text {
   transition: .5s ease;
   opacity: 0;
