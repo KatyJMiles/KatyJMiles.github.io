@@ -67,13 +67,10 @@ body {
   transition: .5s ease;
   backface-visibility: hidden;
   float:left;
-  width: 100%;
+  width: 75%;
 }
 
-.tabs .tabContent .row .radial .radialImage {
-  width: 250px;
-  height: 250px;
-}
+
 
 
 .wave_text {
