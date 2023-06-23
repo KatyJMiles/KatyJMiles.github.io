@@ -41,6 +41,7 @@ body {
    padding: 50px;
    background-color: #FEFEF3;
    display: none;
+   order: 1;
 }
 .tabs .tabContent h2 {
    font-size: 3em;
