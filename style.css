@@ -17,7 +17,7 @@ body {
 }
 .tabs label {
  display: inline-block;
- margin: 0px;
+ margin: 10px;
  font-family: 'gill sans', sans-serif;
  padding: 10px 20px;
  font-weight: 650;
