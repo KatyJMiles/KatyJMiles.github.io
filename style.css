@@ -61,7 +61,7 @@ body {
  font-size:55px;
 }
 
-.row {
+tabs. .tabContent .row {
   opacity: 1;  
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -70,7 +70,6 @@ body {
   backface-visibility: hidden;
 }
 
-.
 .wave_text {
   transition: .5s ease;
   opacity: 0;
