@@ -9,7 +9,7 @@ body {
     list-style: none;
    display: flex;
    flex-flow: row wrap;
-   justify-content: stretch;
+   justify-content: right;
 }
 .tabs input[type="radio"] {
    display: none;
@@ -24,6 +24,7 @@ body {
  color: #342907;
  border: 1px solid transparent;
  border-radius: 15px;
+ font-size:20px;
 }
 
 .tabs label:before {
