@@ -67,7 +67,7 @@ body {
   opacity: 1;  
   transition: .5s ease;
   backface-visibility: hidden;
-  display: grid;
+  display: inline-block;
   grid-template-columns: 50% 50%;
   column-gap: 5px;
   margin-left: auto;
