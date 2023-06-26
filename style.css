@@ -75,15 +75,13 @@ body {
 
 .radialImage {
   width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+  align-self: cetner;
   border: 1.5px solid #000000;
 }
 
 .waveImage {
   width: 60%;
-  margin-left: auto;
-  margin-right: auto;
+  align-self: center;
   border: 1.5px solid #000000;
 }
 
