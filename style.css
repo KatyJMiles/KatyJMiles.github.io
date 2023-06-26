@@ -6,9 +6,11 @@ body {
 }
 
 .tabs {
-    list-style: none;
+   list-style: none;
    display: flex;
    justify-content: right;
+   flex-flow: row wrap;
+
 }
 .tabs input[type="radio"] {
    display: none;
