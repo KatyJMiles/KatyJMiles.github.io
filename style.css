@@ -72,11 +72,11 @@ body {
   column-gap: 5px;
 }
 .tabs .tabContent .row .radial .radialImage {
-  width: 33%;
+  width: 50%;
 }
 
 .tabs .tabContent .row .wave .waveImage {
-  width: 33%;
+  width: 50%;
 }
 .wave_text {
   transition: .5s ease;
