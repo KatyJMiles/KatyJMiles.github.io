@@ -72,6 +72,7 @@ body {
   column-gap: 5px;
   margin-left: auto;
   margin-right: auto;
+  justify-content: center;
 }
 
 .radialImage {
@@ -81,7 +82,7 @@ body {
   border: 1px solid #000000;
 }
 
-.tabs .tabContent .row .wave .waveImage {
+.waveImage {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
