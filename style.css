@@ -88,19 +88,19 @@ body {
 .wave_text {
   transition: .5s ease;
   position: absolute;
+  opacity: 0;
   top: 50%;
   left: 25%;
   background-color: #99B5C9;
-  color: #FEFEF9;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%)
 }
 
 .radial_text {
   transition: .5s ease;
+  opacity: 0;
   position: absolute;
   background-color: #99B5C9;
-  color: #FEFEF9;
   top: 50%;
   left: 70%;
   transform: translate(-50%, -50%);
@@ -119,13 +119,15 @@ body {
 
 .tabs .tabContent .row .wave:hover .wave_text {
   opacity: 1;
+  cursor: pointer;
 }
 .tabs .tabContent .row .radial:hover .radial_text {
   opacity: 1;
+  cursor: pointer;
 }
 
 .tabs .tabContent .row .wave_text .text {
-  color: black;
+  color: #FEFEF9;
   font-size: 20px;
   padding: 16px 32px;
   font-family: 'Trebuchet MS', sans-serif;
@@ -133,7 +135,7 @@ body {
 }
 
 .tabs .tabContent .row .radial_text .text {
-  color: black;
+  color: #FEFEF9;
   font-size: 20px;
   padding: 16px 32px;
   font-family: 'Trebuchet MS', sans-serif;
