@@ -78,12 +78,14 @@ body {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid #000000;
 }
 
 .tabs .tabContent .row .wave .waveImage {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  border: 0.5px solid #000000;
 }
 
 .wave_text {
