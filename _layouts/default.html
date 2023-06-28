@@ -85,19 +85,8 @@
           <body>
             <svg id="myPlot" style="width:500px;height:500px"></svg>
             <script>
-            // Set Dimensions
-            const xSize = 500; 
-            const ySize = 500;
-            const margin = 40;
-            const xMax = xSize - margin*2;
-            const yMax = ySize - margin*2;
-            
-            // Create Random Points
-            const numPoints = 100;
-            const data = [];
-            for (let i = 0; i < numPoints; i++) {
-              data.push([Math.random() * xMax, Math.random() * yMax]);
-            }
+
+            const data = d3.csv("City_of_Fort_Collins_Water_Demand.csv");
             
             // Append SVG Object to the Page
             const svg = d3.select("#myPlot")
@@ -106,9 +95,11 @@
               .attr("transform","translate(" + margin + "," + margin + ")");
             
             // X Axis
-            const x = d3.scaleLinear()
-              .domain([0, 500])
-              .range([0, xMax]);
+            const x = d3.scaleTime()
+                  .domain(d3.extent(data, function(d) { 
+                        return new Date(d.Date); 
+                  }))
+                  .range([0, 400]);
             
             svg.append("g")
               .attr("transform", "translate(0," + yMax + ")")
@@ -116,8 +107,8 @@
             
             // Y Axis
             const y = d3.scaleLinear()
-              .domain([0, 500])
-              .range([ yMax, 0]);
+              .domain([0, 50])
+              .range([ 400, 0]);
             
             svg.append("g")
               .call(d3.axisLeft(y));
@@ -127,7 +118,7 @@
               .selectAll("dot")
               .data(data).enter()
               .append("circle")
-              .attr("cx", function (d) { return d[0] } )
+              .attr("cx", function (d) { return d.Date } )
               .attr("cy", function (d) { return d[1] } )
               .attr("r", 3)
               .style("fill", "Red");
