@@ -86,12 +86,8 @@
             <svg id="myPlot" style="width:500px;height:500px"></svg>
             <script>
 
-            const data = d3.csv("/Data/City_of_Fort_Collins_Water_Demand.csv", function(data) {
-                for (var i = 0; i < data.length; i++) {
-                  console.log(data[i].Date);
-                  console.log(data[i].Actual.Projected.Demand);
-                }
-            }););
+            const data = d3.csv("/Data/City_of_Fort_Collins_Water_Demand.csv");
+            console.log(data);
               
             // Append SVG Object to the Page
             const svg = d3.select("#myPlot")
