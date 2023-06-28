@@ -81,25 +81,7 @@
        <input type="radio" name="tabs" id="tab6"> 
         <label for="tab6">Project</label>
         <div class="tabContent">
-
-        <main class="content container flex-grow-1 mb-2">
-         <script>
-          
-         var body = d3.select('div')
-
-         body.append('input')
-              .attr('type','text')
-              .attr("id", "myInput")
-              .attr('name','myInput')
-              .attr("value", 1999)
-            
-          
-          d3.csv("data/City_of_Fort_Collins_Water_Demand.csv", d3.autoType).then(function (data) {
-            render(data);
-          });
-         </script>
-        </main>
-
+         <script src="/scripts/index.js"></script>
         </div>
        
         <!-- ------------------------------------------------------------------------ -->
