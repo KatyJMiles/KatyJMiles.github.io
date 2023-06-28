@@ -83,7 +83,7 @@
         <div class="tabContent">
 
         <main class="content container flex-grow-1 mb-2">
-
+         <script>
           
          var body = d3.select('body')
 
@@ -97,6 +97,7 @@
           d3.csv("data/City_of_Fort_Collins_Water_Demand.csv", d3.autoType).then(function (data) {
             render(data);
           });
+         </script>
         </main>
 
         </div>
