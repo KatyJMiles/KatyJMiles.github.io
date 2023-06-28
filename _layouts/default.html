@@ -82,6 +82,7 @@
         <label for="tab6">Project</label>
         <div class="tabContent">
          <script src="//d3js.org/d3.v4.js"></script>
+          <body>
             <svg id="myPlot" style="width:500px;height:500px"></svg>
             <script>
             const svg = d3.select("#myPlot")
@@ -90,6 +91,7 @@
                           .attr("transform","translate(" + margin + "," + margin + ")");
              svg.append("p").text("Testing");
             </script>
+          </body>
         </div>
        
         <!-- ------------------------------------------------------------------------ -->
