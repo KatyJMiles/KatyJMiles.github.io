@@ -71,7 +71,7 @@ body {
   grid-template-columns: 50% 50%;
   column-gap: 5px;
   margin: auto;
-  row-gap: 5px;
+  row-gap: 25px;
 }
 
 .radialImage {
@@ -121,7 +121,7 @@ body {
   opacity: 0;
   position: absolute;
   background-color: #99B5C9;
-  top: 75%;
+  top: 90%;
   left: 25%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%)
@@ -137,10 +137,21 @@ body {
   cursor: pointer;
 }
 
+.tabs .tabContent .row .wave2:hover .wave2Image {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
 .tabs .tabContent .row .wave:hover .wave_text {
   opacity: 1;
   cursor: pointer;
 }
+
+.tabs .tabContent .row .wave2:hover .wave2_text {
+  opacity: 1;
+  cursor: pointer;
+}
+
 .tabs .tabContent .row .radial:hover .radial_text {
   opacity: 1;
   cursor: pointer;
