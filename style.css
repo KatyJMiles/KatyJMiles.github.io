@@ -71,6 +71,7 @@ body {
   grid-template-columns: 50% 50%;
   column-gap: 5px;
   margin: auto;
+  row-gap: 5px;
 }
 
 .radialImage {
