@@ -97,13 +97,25 @@ body {
   -ms-transform: translate(-50%, -50%)
 }
 
+.wave2_text {
+  transition: .5s ease;
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 72.5%;
+  background-color: #99B5C9;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+
 .radial_text {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
   background-color: #99B5C9;
-  top: 50%;
-  left: 72.5%;
+  top: 75%;
+  left: 25%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%)
 }
@@ -136,6 +148,15 @@ body {
 }
 
 .tabs .tabContent .row .radial_text .text {
+  color: #FEFEF9;
+  font-size: 20px;
+  padding: 16px 32px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 2000;
+}
+
+
+.tabs .tabContent .row .wave2_text .text {
   color: #FEFEF9;
   font-size: 20px;
   padding: 16px 32px;
