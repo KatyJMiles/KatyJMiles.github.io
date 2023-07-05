@@ -94,43 +94,45 @@
 
             d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(data) {
                 console.log(data);
+
+                  
+                // Append SVG Object to the Page
+                const svg = d3.select("#myPlot")
+                  .append("svg")
+                  .append("g")
+                  .attr("transform","translate(" + 40 + "," + 40 + ")");
+                
+                // X Axis
+                const x = d3.scaleTime()
+                      .domain(d3.extent(data, function(d) { 
+                            return new Date(d.Date); 
+                      }))
+                      .range([0, 400]);
+                
+                svg.append("g")
+                  .attr("transform", "translate(0," + 420 + ")")
+                  .call(d3.axisBottom(x));
+                
+                // Y Axis
+                const y = d3.scaleLinear()
+                  .domain([0, 50])
+                  .range([ 400, 0]);
+                
+                svg.append("g")
+                  .call(d3.axisLeft(y));
+                console.log(data.Date);
+                // Dots
+                svg.append('g')
+                  .selectAll("dot")
+                  .data(data).enter()
+                  .append("circle")
+                  .attr("cx", function (d) { return d.Date } )
+                  .attr("cy", function (d) { return d[1] } )
+                  .attr("r", 3)
+                  .style("fill", "Red");
+
             });
 
-              
-            // Append SVG Object to the Page
-            const svg = d3.select("#myPlot")
-              .append("svg")
-              .append("g")
-              .attr("transform","translate(" + 40 + "," + 40 + ")");
-            
-            // X Axis
-            const x = d3.scaleTime()
-                  .domain(d3.extent(data, function(d) { 
-                        return new Date(d.Date); 
-                  }))
-                  .range([0, 400]);
-            
-            svg.append("g")
-              .attr("transform", "translate(0," + 420 + ")")
-              .call(d3.axisBottom(x));
-            
-            // Y Axis
-            const y = d3.scaleLinear()
-              .domain([0, 50])
-              .range([ 400, 0]);
-            
-            svg.append("g")
-              .call(d3.axisLeft(y));
-            console.log(data.Date);
-            // Dots
-            svg.append('g')
-              .selectAll("dot")
-              .data(data).enter()
-              .append("circle")
-              .attr("cx", function (d) { return d.Date } )
-              .attr("cy", function (d) { return d[1] } )
-              .attr("r", 3)
-              .style("fill", "Red");
             </script>
           </body>
         </div>
