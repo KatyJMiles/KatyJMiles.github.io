@@ -93,9 +93,9 @@
             <script>
 
             d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(data) {
-                console.log(data);
 
                 data.forEach((d) =>  (d.Date = d3.timeParse("%m/%d/%Y")(data.Date))); 
+                console.log(data.Date);
 
                   
                 // Append SVG Object to the Page
@@ -111,11 +111,6 @@
                         svg.append("g")
                           .attr("transform", "translate(0," + 400 + ")")
                           .call(d3.axisBottom(x));
-
-                
-                svg.append("g")
-                  .attr("transform", "translate(0," + 420 + ")")
-                  .call(d3.axisBottom(x));
                 
                 // Y Axis
                 const y = d3.scaleLinear()
