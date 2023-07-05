@@ -107,7 +107,7 @@
                           .domain(d3.extent(data, function(d) { return d.Date; }))
                           .range([ 0, 400 ]);
                         svg.append("g")
-                          .attr("transform", "translate(0," + height + ")")
+                          .attr("transform", "translate(0," + 400 + ")")
                           .call(d3.axisBottom(x));
 
                 
