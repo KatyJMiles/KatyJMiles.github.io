@@ -103,11 +103,13 @@
                   .attr("transform","translate(" + 40 + "," + 40 + ")");
                 
                 // X Axis
-                const x = d3.scaleTime()
-                      .domain(d3.extent(data, function(d) { 
-                            return new Date(d.Date); 
-                      }))
-                      .range([0, 400]);
+                var x = d3.scaleTime()
+                          .domain(d3.extent(data, function(d) { return d.Date; }))
+                          .range([ 0, width ]);
+                        svg.append("g")
+                          .attr("transform", "translate(0," + height + ")")
+                          .call(d3.axisBottom(x));
+
                 
                 svg.append("g")
                   .attr("transform", "translate(0," + 420 + ")")
@@ -128,7 +130,7 @@
                     .attr("stroke-width", 1.5)
                     .attr("d", d3.line()
                       .x(function(d) { return x(d.Date) })
-                      .y(function(d) { return y(d[1]) })
+                      .y(function(d) { return y(d["Total Actual Demand (MGD)"]) })
                       )
 
 
