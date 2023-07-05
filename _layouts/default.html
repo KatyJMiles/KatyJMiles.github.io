@@ -95,7 +95,7 @@
             d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(data) {
                 console.log(data);
 
-                date.forEach((d) =>  (d.Date = d3.timeParse("%m/%d/%Y")(data.Date))); 
+                data.forEach((d) =>  (d.Date = d3.timeParse("%m/%d/%Y")(data.Date))); 
 
                   
                 // Append SVG Object to the Page
