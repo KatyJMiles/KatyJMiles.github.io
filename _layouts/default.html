@@ -102,7 +102,7 @@
                         console.log(data);
 
                         data.forEach(function(d,i) {
-                            d.Date = d3.parseTime("%m/%d/%Y")(d.Date);
+                            d.Date = d3.timeParse("%m/%d/%Y")(d.Date);
                         });
 
                   
