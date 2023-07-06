@@ -100,39 +100,41 @@
                           };
                       }).then(function(data) {
                         console.log(data);
-                      });
                   
-                // Append SVG Object to the Page
-                const svg = d3.select("#myPlot")
-                  .append("svg")
-                  .append("g")
-                  .attr("transform","translate(" + 40 + "," + 40 + ")");
-                
-                // X Axis
-                var x = d3.scaleTime()
-                          .domain(d3.extent(data, function(d) { return d.Date; }))
-                          .range([ 0, 400 ]);
-                        svg.append("g")
-                          .attr("transform", "translate(0," + 400 + ")")
-                          .call(d3.axisBottom(x));
-                
-                // Y Axis
-                const y = d3.scaleLinear()
-                  .domain([0, 50])
-                  .range([ 400, 0]);
-                
-                svg.append("g")
-                  .call(d3.axisLeft(y));
-                
-                svg.append("path")
-                    .datum(data)
-                    .attr("fill", "none")
-                    .attr("stroke", "steelblue")
-                    .attr("stroke-width", 1.5)
-                    .attr("d", d3.line()
-                      .x(function(d) { return x(d.Date) })
-                      .y(function(d) { return y(d["Total Actual Demand (MGD)"]) })
-                      )
+                    // Append SVG Object to the Page
+                    const svg = d3.select("#myPlot")
+                      .append("svg")
+                      .append("g")
+                      .attr("transform","translate(" + 40 + "," + 40 + ")");
+                    
+                    // X Axis
+                    var x = d3.scaleTime()
+                              .domain(d3.extent(data, function(d) { return d.Date; }))
+                              .range([ 0, 400 ]);
+                            svg.append("g")
+                              .attr("transform", "translate(0," + 400 + ")")
+                              .call(d3.axisBottom(x));
+                    
+                    // Y Axis
+                    const y = d3.scaleLinear()
+                      .domain([0, 50])
+                      .range([ 400, 0]);
+                    
+                    svg.append("g")
+                      .call(d3.axisLeft(y));
+                    
+                    svg.append("path")
+                        .datum(data)
+                        .attr("fill", "none")
+                        .attr("stroke", "steelblue")
+                        .attr("stroke-width", 1.5)
+                        .attr("d", d3.line()
+                          .x(function(d) { return x(d.Date) })
+                          .y(function(d) { return y(d["Total Actual Demand (MGD)"]) })
+                          )
+
+                    });
+
 
 
 
