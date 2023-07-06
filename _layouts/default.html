@@ -150,7 +150,13 @@
                           )
                     });
 
-
+                    // Draw background grid
+                    svg.append("rect")
+                      .attr("x", x(d.Date[10]))
+                      .attr("y", 0)
+                      .attr("width", x(d.Date[2]) - x(d.Date[10]))
+                      .attr("height", 700)
+                      .attr("fill", "#eee");
 
 
             </script>
