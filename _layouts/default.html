@@ -148,7 +148,6 @@
                           .x(function(d) { return x(d.Date) })
                           .y(function(d) { return y(d.Projected) })
                           )
-                    });
 
                     // Draw background grid
                     svg.append("rect")
@@ -157,6 +156,9 @@
                       .attr("width", x(d.Date[2]) - x(d.Date[10]))
                       .attr("height", 700)
                       .attr("fill", "#eee");
+
+                    });
+
 
 
             </script>
