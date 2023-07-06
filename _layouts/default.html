@@ -94,7 +94,7 @@
 
             d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(data) {
                 const parseTime = d3.timeParse("%m/%d/%Y");
-                data.forEach((d) =>  (d.Date = parseTime(data.Date))); 
+                d.Date = parseTime(data.Date); 
                 console.log(data.Date);
 
                   
