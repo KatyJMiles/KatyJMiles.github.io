@@ -89,7 +89,7 @@
         <div class="tabContent">
          <script src="//d3js.org/d3.v5.js"></script>
           <body>
-            <svg id="myPlot" style="width:800px;height:500px;margin:100px;"></svg>
+            <svg id="myPlot" style="width:800px;height:800px;margin:100px;"></svg>
             <script>
 
             d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(d) {
@@ -121,7 +121,7 @@
                     // Y Axis
                     const y = d3.scaleLinear()
                       .domain([0, 50])
-                      .range([ 400, 0]);
+                      .range([ 700, 0]);
                     
                     svg.append("g")
                       .call(d3.axisLeft(y));
