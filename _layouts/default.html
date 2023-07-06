@@ -94,7 +94,7 @@
 
             d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(d) {
                 return {
-                    Date : d.Date,
+                    Date : d3.timeParse("%m/%d/%Y")(d.Date),
                     Acutal : +d["Total Actual Demand (MGD)"],
                     Projected : +d["Total Projected Demand (MGD)"],
                           };
