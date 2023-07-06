@@ -95,7 +95,7 @@
             d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(d) {
                 return {
                     Date : d3.timeParse("%Y/%m/%d")(d.Date),
-                    Acutal : +d["Total Actual Demand (MGD)"],
+                    Actual: +d["Total Actual Demand (MGD)"],
                     Projected : +d["Total Projected Demand (MGD)"],
                           };
                       }).then(function(data) {
@@ -126,6 +126,8 @@
                     svg.append("g")
                       .call(d3.axisLeft(y));
                     
+
+                    // Add actual water usage time series
                     svg.append("path")
                         .datum(data)
                         .attr("fill", "none")
@@ -133,9 +135,19 @@
                         .attr("stroke-width", 1.5)
                         .attr("d", d3.line()
                           .x(function(d) { return x(d.Date) })
-                          .y(function(d) { return y(d.Acutal) })
+                          .y(function(d) { return y(d.Actual) })
                           )
 
+                    // Add projected water usage time series
+                    svg.append("path")
+                        .datum(data)
+                        .attr("fill", "none")
+                        .attr("stroke", "orange")
+                        .attr("stroke-width", 1.5)
+                        .attr("d", d3.line()
+                          .x(function(d) { return x(d.Date) })
+                          .y(function(d) { return y(d.Projected) })
+                          )
                     });
 
 
