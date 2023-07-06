@@ -113,9 +113,9 @@
                     // X Axis
                     var x = d3.scaleTime()
                               .domain(d3.extent(data, function(d) { return d.Date; }))
-                              .range([ 0, 400 ]);
+                              .range([ 0, 800 ]);
                             svg.append("g")
-                              .attr("transform", "translate(0," + 400 + ")")
+                              .attr("transform", "translate(0," + 800 + ")")
                               .call(d3.axisBottom(x));
                     
                     // Y Axis
