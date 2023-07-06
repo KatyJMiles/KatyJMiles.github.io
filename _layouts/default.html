@@ -87,23 +87,21 @@
        <input type="radio" name="tabs" id="tab6"> 
         <label for="tab6">Project</label>
         <div class="tabContent">
-         <script src="//d3js.org/d3.v5.js"></script>
+         <script src="//d3js.org/d3.v4.js"></script>
           <body>
             <svg id="myPlot" style="width:500px;height:500px"></svg>
             <script>
 
             d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(d) {
                 return {
-                    Date : d.Date,
+                    Date : d3.timeParse("%m/%d/%Y")(d.Date),
                     Acutal : +d["Total Actual Demand (MGD)"],
                     Projected : +d["Total Projected Demand (MGD)"],
                           };
                       }).then(function(data) {
                         console.log(data);
 
-                        data.forEach(function(d,i) {
-                            d.Date = d3.timeParse("%m/%d/%Y")(d.Date);
-                        });
+                  
 
                   
                     // Append SVG Object to the Page
