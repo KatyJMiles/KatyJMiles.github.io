@@ -140,15 +140,21 @@
 
                       
                     // Draw background grid
-                    console.log(data[121].Date);
-                    console.log(data[304].Date);
-                    svg.append("rect")
-                      .datum(data)
-                      .attr("x", x(data[121].Date))
-                      .attr("y", 0)
-                      .attr("width", x(data[304].Date) - x(data[121].Date))
-                      .attr("height", 700)
-                      .attr("fill", "#eee");
+                    var start = 121
+                    var end = 304
+                    for (let i = 0; i < 4; i++) {
+                      console.log(data[start].Date);
+                      console.log(data[end].Date);
+                      svg.append("rect")
+                        .datum(data)
+                        .attr("x", x(data[start].Date))
+                        .attr("y", 0)
+                        .attr("width", x(data[end].Date) - x(data[start].Date))
+                        .attr("height", 700)
+                        .attr("fill", "#eee");
+                      start = start + 365
+                      end = end + 365
+                    }
 
                     
 
