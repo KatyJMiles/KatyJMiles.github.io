@@ -168,10 +168,9 @@
                           .x(function(d) { return x(d.Date) })
                           .y(function(d) { return y(d.Actual) })
                           )
-                        .on("mousemove", function(event, d){
-                          let median = (d.TMAX + d.TMIN) / 2;
+                        .on("mousemove", function(event, data){
                           tooltip.html(
-                            `<div style="text-align: center; font-weight: bold; font-size: 120%;">${DateTime.fromJSDate(data.date).toLocaleString(DateTime.DATE_FULL)}</div>
+                            `<div style="text-align: center; font-weight: bold; font-size: 120%;">${DateTime.fromJSDate(data.Date).toLocaleString(DateTime.DATE_FULL)}</div>
                             <div style="border-top: dashed 1px black; border-bottom: dashed 1px black;">
                             Date: <b>${d.Date}</b><br>
                             </div>
