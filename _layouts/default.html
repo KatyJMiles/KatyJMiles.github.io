@@ -156,6 +156,12 @@
                       end = end + 365
                     }
 
+                                        
+                    const tooltip = d3.selectAll("body").append("div")
+                    .attr("class", "svg-tooltip")
+                      .style("position", "absolute")
+                      .style("visibility", "hidden") 
+
                     
 
                     // Add actual water usage time series
