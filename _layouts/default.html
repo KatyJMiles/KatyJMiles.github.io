@@ -140,12 +140,13 @@
 
                       
                     // Draw background grid
-                    console.log(data[120].Date);
+                    console.log(data[121].Date);
+                    console.log(data[300].Date);
                     svg.append("rect")
                       .datum(data)
-                      .attr("x", x(data[120].Date))
+                      .attr("x", x(data[121].Date))
                       .attr("y", 0)
-                      .attr("width", x(data[242].Date) - x(data[120].Date))
+                      .attr("width", x(data[300].Date) - x(data[121].Date))
                       .attr("height", 700)
                       .attr("fill", "#eee");
 
