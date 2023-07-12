@@ -137,7 +137,6 @@
                       .attr("height", 700)
                       .attr("fill", "#eee");
 
-                    });
                     
 
                     // Add actual water usage time series
@@ -161,6 +160,9 @@
                           .x(function(d) { return x(d.Date) })
                           .y(function(d) { return y(d.Projected) })
                           )
+
+                  });
+
 
 
 
