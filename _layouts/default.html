@@ -168,6 +168,17 @@
                           .x(function(d) { return x(d.Date) })
                           .y(function(d) { return y(d.Actual) })
                           )
+                        .on("mousemove", function(event, d){
+                          let median = (d.TMAX + d.TMIN) / 2;
+                          tooltip.html(
+                            `<div style="text-align: center; font-weight: bold; font-size: 120%;">${DateTime.fromJSDate(data.date).toLocaleString(DateTime.DATE_FULL)}</div>
+                            <div style="border-top: dashed 1px black; border-bottom: dashed 1px black;">
+                            Date: <b>${d.Date}</b><br>
+                            </div>
+                            `
+                          );
+                          return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+5)+"px");
+                        })
 
                     // Add projected water usage time series
                     svg.append("path")
