@@ -109,6 +109,19 @@
                       .append("svg")
                       .append("g")
                       .attr("transform","translate(" + 40 + "," + 40 + ")");
+
+                      
+                    // Draw background grid
+                    console.log(data[120].Date);
+                    svg.append("rect")
+                      .datum(data)
+                      .attr("x", x(data[120].Date))
+                      .attr("y", 0)
+                      .attr("width", x(data[242].Date) - x(data[120].Date))
+                      .attr("height", 700)
+                      .attr("fill", "#eee");
+
+                    });
                     
                     // X Axis
                     var x = d3.scaleTime()
@@ -149,17 +162,6 @@
                           .y(function(d) { return y(d.Projected) })
                           )
 
-                    // Draw background grid
-                    console.log(data[10].Date);
-                    svg.append("rect")
-                      .datum(data)
-                      .attr("x", x(data[10].Date))
-                      .attr("y", 0)
-                      .attr("width", x(data[10].Date) - x(data[2].Date))
-                      .attr("height", 700)
-                      .attr("fill", "#eee");
-
-                    });
 
 
 
