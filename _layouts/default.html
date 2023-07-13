@@ -152,7 +152,7 @@
                         .attr("width", x(data[end].Date) - x(data[start].Date))
                         .attr("height", 700)
                         .attr("fill", "#CFE5CA")
-                        .style("opacity", 0.3);
+                        .style("opacity", 0.1);
                       start = start + 365
                       end = end + 365
                     }
@@ -161,9 +161,9 @@
                     svg.append("text")
                         .datum(data)
                         .attr("x", x(data[121].Date))
-                        .attr("y", 700)
+                        .attr("y", 720)
                         .text(data[121].Date.toLocaleString('default', { month: 'long' }))
-                        .style("font-size", "7Spx");
+                        .style("font-size", "5px");
 
 
                                         
