@@ -156,6 +156,14 @@
                       end = end + 365
                     }
 
+                    // Manual x-axis
+                    svg.append("text")
+                        .datum(data)
+                        .attr("x", x(data[start].Date))
+                        .attr("y", 0)
+                        .text(data[start].Date.toLocaleString('default', { month: 'long' }));
+
+
                                         
                     //const tooltip = new Tooltip();
 
