@@ -207,7 +207,7 @@
                           .y(function(d) { return y(d.Projected) })
                           )
 
-                    // Test drawing arrow
+                    // Draw arrow
                     var line = svg.append("line")
                                   .attr("x1",770)  
                                   .attr("y1",3)  
@@ -216,6 +216,13 @@
                                   .attr("stroke","gray")  
                                   .attr("stroke-width",1)  
                                   .attr("marker-end","url(#arrow)");  
+
+                    // Add text on sprinkler season
+                    var sprinkler_text = svg.append("text")
+                                  .attr("x",780)  
+                                  .attr("y",3)
+                                  .text("Recommended sprinler /n season")  
+
 
 
 
