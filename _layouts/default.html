@@ -141,13 +141,13 @@
                               .domain(d3.extent(data, function(d) { return d.Date; }))
                               .range([ 0, 700 ]);
                             svg.append("g")
-                              .attr("transform", "translate(0," + 700 + ")")
+                              .attr("transform", "translate(0," + 600 + ")")
                               //.call(d3.axisBottom(x));
                     
                     // Y Axis
                     const y = d3.scaleLinear()
                       .domain([0, 45])
-                      .range([ 700, 0]);
+                      .range([ 600, 0]);
                     
                     svg.append("g")
                       //.call(d3.axisLeft(y));
@@ -164,7 +164,7 @@
                         .attr("x", x(data[start].Date))
                         .attr("y", 0)
                         .attr("width", x(data[end].Date) - x(data[start].Date))
-                        .attr("height", 700)
+                        .attr("height", 600)
                         .attr("fill", "#CFE5CA")
                         .style("opacity", 0.2);
                       start = start + 365
@@ -175,7 +175,7 @@
                     svg.append("text")
                         .datum(data)
                         .attr("x", x(data[121].Date))
-                        .attr("y", 720)
+                        .attr("y", 620)
                         .text(data[121].Date.toLocaleString('default', { month: 'long' }))
                         .style("font-size", "8px");
 
