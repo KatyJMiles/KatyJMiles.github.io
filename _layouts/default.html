@@ -207,20 +207,6 @@
                           .y(function(d) { return y(d.Projected) })
                           )
 
-                          svg.append("g")
-                        .attr("fill", "none")
-                        .attr("pointer-events", "all")
-                      .selectAll("rect")
-                      .data(d3.pairs(data))
-                      .join("rect")
-                        .attr("x", ([a, b]) => x(a.date))
-                        .attr("height", height)
-                        .attr("width", ([a, b]) => x(b.date) - x(a.date))
-                        .on("mouseover", (event, [a]) => tooltip.show(a))
-                        .on("mouseout", () => tooltip.hide());
-
-                    svg.append(() => tooltip.node);
-
                     // Test drawing arrow
                     var curve_path = "M20,70 T80,100 T160,80 T200,90";
                     var curve = svg.append("path")  
