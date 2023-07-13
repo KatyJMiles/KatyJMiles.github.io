@@ -89,7 +89,21 @@
         <div class="tabContent">
          <script src="//d3js.org/d3.v5.js"></script>
           <body>
-            <svg id="myPlot" style="width:800px;height:800px;margin:10px;"></svg>
+            <svg id="myPlot" style="width:800px;height:800px;margin:10px;">
+              <defs>
+                <marker
+                  id="arrow"
+                  markerUnits="strokeWidth"
+                  markerWidth="12"
+                  markerHeight="12"
+                  viewBox="0 0 12 12"
+                  refX="6"
+                  refY="6"
+                  orient="auto">
+                  <path d="M2,2 L10,6 L2,10 L6,6 L2,2" style="fill: gray;"></path>
+                </marker>
+              </defs>            
+            </svg>
             <script>
 
             d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(d) {
@@ -152,7 +166,7 @@
                         .attr("width", x(data[end].Date) - x(data[start].Date))
                         .attr("height", 700)
                         .attr("fill", "#CFE5CA")
-                        .style("opacity", 0.1);
+                        .style("opacity", 0.2);
                       start = start + 365
                       end = end + 365
                     }
@@ -163,7 +177,7 @@
                         .attr("x", x(data[121].Date))
                         .attr("y", 720)
                         .text(data[121].Date.toLocaleString('default', { month: 'long' }))
-                        .style("font-size", "5px");
+                        .style("font-size", "8px");
 
 
                                         
@@ -206,6 +220,16 @@
                         .on("mouseout", () => tooltip.hide());
 
                     svg.append(() => tooltip.node);
+
+                    // Test drawing arrow
+                    var curve_path = "M20,70 T80,100 T160,80 T200,90";
+                    var curve = svg.append("path")  
+                                .attr("d",curve_path)  
+                                .attr("fill","white")  
+                                .attr("stroke","blue")  
+                                .attr("stroke-width",2)  
+                                .attr("marker-start","url(#arrow)")  
+                                .attr("marker-end","url(#arrow)");  
 
 
                   });
