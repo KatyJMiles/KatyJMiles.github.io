@@ -208,11 +208,10 @@
                           )
 
                     // Test drawing arrow
-                    var curve_path = "M20,70 T80,100 T160,80 T200,90";
+                    var curve_path = "T80,80 T160,100 T200,90";
                     var curve = svg.append("path")  
                                 .attr("d",curve_path)  
-                                .attr("fill","white")  
-                                .attr("stroke","blue")  
+                                .attr("stroke","gray")  
                                 .attr("stroke-width",2)  
                                 .attr("marker-start","url(#arrow)")  
                                 .attr("marker-end","url(#arrow)");  
