@@ -208,7 +208,8 @@
                           .x(function(d) { return x(d.Date) })
                           .y(function(d) { return y(d.Actual) })
                         )
-                        .on("mouseover", function(d){                                
+                        .on("mouseover", function(data){ 
+                                 console.log(data.Date)
                                   return tooltip.style("visibility", "visible");
                                 })
                         .on("mousemove", function(event, d){
