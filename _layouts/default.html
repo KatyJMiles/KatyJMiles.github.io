@@ -140,18 +140,24 @@
                     var x = d3.scaleTime()
                               .domain(d3.extent(data, function(d) { return d.Date; }))
                               .range([ 0, 700 ]);
-                            svg.append("g")
+
+                    var xaxis = svg.append("g")
                               .attr("transform", "translate(0," + 600 + ")")
                               .call(d3.axisBottom(x));
                     
+                    xaxis.selectAll("line")
+                          .style("stroke", "gray");
+                  
                     // Y Axis
                     const y = d3.scaleLinear()
                       .domain([0, 45])
-                      .range([ 600, 0])
-                      .style("fill", "gray");
+                      .range([ 600, 0]);
                     
-                    svg.append("g")
+                    var yaxis = svg.append("g")
                       .call(d3.axisLeft(y));
+
+                    yaxis.selectAll("line")
+                       .style("stroke", "gray");
 
                       
                     // Draw background grid
