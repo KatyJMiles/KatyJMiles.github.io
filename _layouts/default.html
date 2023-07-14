@@ -222,7 +222,7 @@
                               .attr("width", ([a, b]) => x(b.Date) - x(a.Date))
                               .on("mousemove", function(event, a){
                                     tooltip.html(
-                                      `<div style="text-align: center; font-weight: bold; font-size: 120%;">${d.date}</div>`
+                                      `<div style="text-align: center; font-weight: bold; font-size: 120%;">Hey</div>`
                                     );
                                     console.log(a.Date)
                                     return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+5)+"px");
