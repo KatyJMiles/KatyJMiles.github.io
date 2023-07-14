@@ -218,7 +218,7 @@
                             .data(d3.pairs(data))
                             .join("rect")
                               .attr("x", ([a, b]) => x(a.Date))
-                              .attr("height", height)
+                              .attr("height", 600)
                               .attr("width", ([a, b]) => x(b.Date) - x(a.Date))
                               .on("mouseover", (event, [a]) => tooltip.show(a))
                               .on("mouseout", () => tooltip.hide());
