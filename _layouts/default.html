@@ -220,10 +220,11 @@
                               .attr("x", ([a, b]) => x(a.Date))
                               .attr("height", 600)
                               .attr("width", ([a, b]) => x(b.Date) - x(a.Date))
-                              .on("mousemove", function(event, d){
+                              .on("mousemove", function(event, a){
                                     tooltip.html(
                                       `<div style="text-align: center; font-weight: bold; font-size: 120%;">${d.date}</div>`
                                     );
+                                    console.log(a.Date)
                                     return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+5)+"px");
                                   })
                                   // Add ability to highlight individual date when hovered over 
