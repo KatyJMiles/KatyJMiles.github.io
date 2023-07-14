@@ -188,7 +188,7 @@
                     svg.append("path")
                         .datum(data)
                         .attr("fill", "none")
-                        .attr("stroke", "#6AB8F1")
+                        .attr("stroke", "#318932")
                         .attr("stroke-width", 1.5)
                         .attr("d", d3.line()
                           .x(function(d) { return x(d.Date) })
@@ -197,16 +197,17 @@
 
 
                     // Add projected water usage time series
-                    svg.append("path")
-                        .datum(data)
-                        .attr("fill", "none")
-                        .attr("stroke", "#566C7C")
-                        .attr("stroke-width", 1.5)
-                        .attr("d", d3.line()
-                          .x(function(d) { return x(d.Date) })
-                          .y(function(d) { return y(d.Projected) })
-                          )
-
+                    //
+                    //svg.append("path")
+                    //    .datum(data)
+                    //    .attr("fill", "none")
+                    //    .attr("stroke", "#566C7C")
+                    //    .attr("stroke-width", 1.5)
+                    //    .attr("d", d3.line()
+                    //      .x(function(d) { return x(d.Date) })
+                    //      .y(function(d) { return y(d.Projected) })
+                          //)
+                    
                     // Draw arrow
                     var line = svg.append("line")
                                   .attr("x1",770)  
@@ -223,6 +224,7 @@
                                   .attr("y",2)
                                   .style("font-size", "14px")
                                   .text("Sprinkler Season")
+                                  .style("font-family", "Bradley Hand, cursive")
                                   .style("color", "gray"); 
 
 
