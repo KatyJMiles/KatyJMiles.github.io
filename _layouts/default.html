@@ -208,16 +208,21 @@
                           .x(function(d) { return x(d.Date) })
                           .y(function(d) { return y(d.Actual) })
                           )
-                          .on("mouseover", function(d){
-                            return tooltip.style("visibility", "visible");
-                          })
-                          .on("mousemove", function(event, d){
-                            tooltip.html(
-                              `<div style="text-align: center; font-weight: bold; font-size: 120%;">${d.Date}</div>`
-                            );
-                            console.log(d.Date)
-                            return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+5)+"px");
-                          })
+
+
+
+                          svg.append("g")
+                              .attr("fill", "none")
+                              .attr("pointer-events", "all")
+                            .selectAll("rect")
+                            .data(d3.pairs(data))
+                            .join("rect")
+                              .attr("x", ([a, b]) => x(a.Date))
+                              .attr("height", height)
+                              .attr("width", ([a, b]) => x(b.Date) - x(a.Date))
+                              .on("mouseover", (event, [a]) => tooltip.show(a))
+                              .on("mouseout", () => tooltip.hide());
+
 
 
                     // Add projected water usage time series
