@@ -220,9 +220,16 @@
                               .attr("x", ([a, b]) => x(a.Date))
                               .attr("height", 600)
                               .attr("width", ([a, b]) => x(b.Date) - x(a.Date))
-                              .on("mouseover", (event, [a]) => tooltip.show(a))
-                              .on("mouseout", () => tooltip.hide());
-
+                              .on("mousemove", function(event, d){
+                                    tooltip.html(
+                                      `<div style="text-align: center; font-weight: bold; font-size: 120%;">${d.date}</div>`
+                                    );
+                                    return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+5)+"px");
+                                  })
+                                  // Add ability to highlight individual date when hovered over 
+                              .on("mouseout", function(d){
+                                    return tooltip.style("visibility", "hidden");
+                              });
 
 
                     // Add projected water usage time series
