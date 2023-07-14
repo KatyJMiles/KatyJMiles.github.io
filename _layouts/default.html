@@ -142,7 +142,7 @@
                               .range([ 0, 700 ]);
                             svg.append("g")
                               .attr("transform", "translate(0," + 600 + ")")
-                              //.call(d3.axisBottom(x));
+                              .call(d3.axisBottom(x).style("fill", "gray"));
                     
                     // Y Axis
                     const y = d3.scaleLinear()
@@ -150,7 +150,7 @@
                       .range([ 600, 0]);
                     
                     svg.append("g")
-                      //.call(d3.axisLeft(y));
+                      .call(d3.axisLeft(y).style("fill", "gray"));
 
                       
                     // Draw background grid
@@ -172,12 +172,12 @@
                     }
 
                     // Manual x-axis
-                    svg.append("text")
-                        .datum(data)
-                        .attr("x", x(data[121].Date))
-                        .attr("y", 620)
-                        .text(data[121].Date.toLocaleString('default', { month: 'long' }))
-                        .style("font-size", "8px");
+                    //svg.append("text")
+                        //.datum(data)
+                        //.attr("x", x(data[121].Date))
+                        //.attr("y", 620)
+                        //.text(data[121].Date.toLocaleString('default', { month: 'long' }))
+                        //.style("font-size", "8px");
 
 
                                         
@@ -210,9 +210,9 @@
                     
                     // Draw arrow
                     var line = svg.append("line")
-                                  .attr("x1",770)  
+                                  .attr("x1",765)  
                                   .attr("y1",3)  
-                                  .attr("x2",670)  
+                                  .attr("x2",668)  
                                   .attr("y2",25)  
                                   .attr("stroke","gray")  
                                   .attr("stroke-width",1)  
