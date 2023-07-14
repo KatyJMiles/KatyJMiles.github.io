@@ -220,6 +220,9 @@
                               .attr("x", ([a, b]) => x(a.Date))
                               .attr("height", 600)
                               .attr("width", ([a, b]) => x(b.Date) - x(a.Date))
+                              .on("mouseover", function(b){                                
+                                  return tooltip.style("visibility", "visible");
+                                })
                               .on("mousemove", function(event, a){
                                     tooltip.html(
                                       `<div style="text-align: center; font-weight: bold; font-size: 120%;">Hey</div>`
