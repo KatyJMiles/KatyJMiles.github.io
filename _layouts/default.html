@@ -126,10 +126,11 @@
                     
                     console.log(dayOfYear(data[10].Date));
 
+                    const tooltip = d3.selectAll("body").append("div")
+                                      .attr("class", "svg-tooltip")
+                                        .style("position", "absolute")
+                                        .style("visibility", "hidden") 
 
-                  
-
-                  
                     // Append SVG Object to the Page
                     const svg = d3.select("#myPlot")
                       .append("svg")
@@ -195,9 +196,6 @@
                         //.style("font-size", "8px");
 
 
-                                        
-                    const tooltip = new Tooltip();
-
 
                     // Add actual water usage time series
                     svg.append("path")
@@ -210,6 +208,15 @@
                           .x(function(d) { return x(d.Date) })
                           .y(function(d) { return y(d.Actual) })
                           )
+                          .on("mouseover", function(d){
+                            return tooltip.style("visibility", "visible");
+                          })
+                          .on("mousemove", function(event, d){
+                            tooltip.html(
+                              `<div style="text-align: center; font-weight: bold; font-size: 120%;">${DateTime.fromJSDate(d.Date).toLocaleString(DateTime.DATE_FULL)}</div>`
+                            );
+                            return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+5)+"px");
+                          })
 
 
                     // Add projected water usage time series
