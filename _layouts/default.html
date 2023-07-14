@@ -196,7 +196,6 @@
                         //.style("font-size", "8px");
 
 
-                    var DateTime = luxon.DateTime;
 
                     // Add actual water usage time series
                     svg.append("path")
@@ -214,7 +213,7 @@
                           })
                           .on("mousemove", function(event, d){
                             tooltip.html(
-                              `<div style="text-align: center; font-weight: bold; font-size: 120%;">${DateTime.fromJSDate(d.Date).toLocaleString(DateTime.DATE_FULL)}</div>`
+                              `<div style="text-align: center; font-weight: bold; font-size: 120%;">${d.Date}</div>`
                             );
                             return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+5)+"px");
                           })
