@@ -142,15 +142,16 @@
                               .range([ 0, 700 ]);
                             svg.append("g")
                               .attr("transform", "translate(0," + 600 + ")")
-                              .call(d3.axisBottom(x).style("fill", "gray"));
+                              .call(d3.axisBottom(x));
                     
                     // Y Axis
                     const y = d3.scaleLinear()
                       .domain([0, 45])
-                      .range([ 600, 0]);
+                      .range([ 600, 0])
+                      .style("fill", "gray");
                     
                     svg.append("g")
-                      .call(d3.axisLeft(y).style("fill", "gray"));
+                      .call(d3.axisLeft(y));
 
                       
                     // Draw background grid
