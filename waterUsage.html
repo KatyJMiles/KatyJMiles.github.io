@@ -1,0 +1,187 @@
+<script src="//d3js.org/d3.v5.js"></script>
+<body>
+  <svg id="myPlot" style="width:1000px;height:900px;margin:10px;">
+    <defs>
+      <marker
+        id="arrow"
+        markerUnits="strokeWidth"
+        markerWidth="11"
+        markerHeight="11"
+        viewBox="0 0 11 11"
+        refX="6"
+        refY="6"
+        orient="auto">
+        <path d="M2,2 L10,6 L2,10 L6,6 L2,2" style="fill: gray;"></path>
+      </marker>
+    </defs>            
+  </svg>
+  <script>
+
+  d3.csv("City_of_Fort_Collins_Water_Demand.csv", function(d) {
+      return {
+          Date : d3.timeParse("%Y/%m/%d")(d.Date),
+          Actual: +d["Total Actual Demand (MGD)"],
+          Projected : +d["Total Projected Demand (MGD)"],
+                };
+            }).then(function(data) {
+              console.log(data);
+
+              var dayOfYear = function(now) {
+                var start = new Date(now.getFullYear(), 0, 0);
+                var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+                var oneDay = 1000 * 60 * 60 * 24;
+                var day = Math.floor(diff / oneDay);
+                return day;
+              }
+
+          
+          console.log(dayOfYear(data[10].Date));
+
+          const tooltip = d3.selectAll("#myplot").append("div")
+                            .attr("class", "svg-tooltip")
+                              .style("position", "absolute")
+                              .style("visibility", "hidden") 
+
+          // Append SVG Object to the Page
+          const svg = d3.select("#myPlot")
+            .append("svg")
+            .append("g")
+            .attr("transform","translate(" + 40 + "," + 40 + ")");
+          
+          // X Axis
+          var x = d3.scaleTime()
+                    .domain(d3.extent(data, function(d) { return d.Date; }))
+                    .range([ 0, 700 ]);
+
+          var xaxis = svg.append("g")
+                    .attr("transform", "translate(0," + 600 + ")")
+                    .call(d3.axisBottom(x));
+          
+          xaxis.selectAll("line")
+             .style("stroke", "gray");
+          xaxis.selectAll("path")
+              .style("stroke", "gray");
+          xaxis.selectAll("text")
+              .style("fill", "gray");
+        
+          // Y Axis
+          const y = d3.scaleLinear()
+            .domain([0, 45])
+            .range([ 600, 10]);
+          
+          var yaxis = svg.append("g")
+            .call(d3.axisLeft(y));
+
+          yaxis.selectAll("line")
+             .style("stroke", "gray");
+          yaxis.selectAll("path")
+              .style("stroke", "gray");
+          yaxis.selectAll("text")
+              .style("fill", "gray");
+
+            
+          // Draw background grid
+          var start = 121
+          var end = 304
+          for (let i = 0; i < 4; i++) {
+            console.log(data[start].Date);
+            console.log(data[end].Date);
+            svg.append("rect")
+              .datum(data)
+              .attr("x", x(data[start].Date))
+              .attr("y", 10)
+              .attr("width", x(data[end].Date) - x(data[start].Date))
+              .attr("height", 590)
+              .attr("fill", "#CFE5CA")
+              .style("opacity", 0.2);
+            start = start + 365
+            end = end + 365
+          }
+
+          // Manual x-axis
+          //svg.append("text")
+              //.datum(data)
+              //.attr("x", x(data[121].Date))
+              //.attr("y", 620)
+              //.text(data[121].Date.toLocaleString('default', { month: 'long' }))
+              //.style("font-size", "8px");
+
+
+          // Add title
+          svg.append("text")
+              .text("Fort Collins Water Usage")
+              .attr("x",200)  
+              .attr("y",0)
+              .style("font-size", "27px")
+              .style("font-family", "gill sans, sans-serif")
+              .style("fill", "gray"); 
+
+          // Add actual water usage time series
+          svg.append("path")
+              .datum(data)
+              .attr("fill", "none")
+              .attr("stroke", "#318932")
+              .attr("stroke-width", 1.5)
+              .style("opacity", 0.5)
+              .attr("d", d3.line()
+                .x(function(d) { return x(d.Date) })
+                .y(function(d) { return y(d.Actual) })
+              )
+              .on("mouseover", function(data){ 
+                       console.log(data.Date)
+                        return tooltip.style("visibility", "visible");
+                      })
+              .on("mousemove", function(event, d){
+                    tooltip.html(
+                      `<div style="text-align: center; font-weight: bold; font-size: 120%;">Hey</div>`
+                    );
+                    console.log(d.Date)
+                    return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+5)+"px");
+                  })
+                  // Add ability to highlight individual date when hovered over 
+              .on("mouseout", function(d){
+                    return tooltip.style("visibility", "hidden");
+              });
+
+
+          // Add projected water usage time series
+          //
+          //svg.append("path")
+          //    .datum(data)
+          //    .attr("fill", "none")
+          //    .attr("stroke", "#566C7C")
+          //    .attr("stroke-width", 1.5)
+          //    .attr("d", d3.line()
+          //      .x(function(d) { return x(d.Date) })
+          //      .y(function(d) { return y(d.Projected) })
+                //)
+          
+          // Draw arrow
+          var line = svg.append("line")
+                        .attr("x1",755)  
+                        .attr("y1",4)  
+                        .attr("x2",670)  
+                        .attr("y2",40)  
+                        .attr("stroke","gray")  
+                        .attr("stroke-width",1)  
+                        .attr("marker-end","url(#arrow)");  
+
+          // Add text on sprinkler season
+          var sprinkler_text = svg.append("text")
+                        .attr("x",700)  
+                        .attr("y",1)
+                        .style("font-size", "15px")
+                        .text("Sprinkler Season")
+                        .style("font-family", "gill sans, sans-serif")
+                        .style("fill", "gray"); 
+
+
+        });
+
+
+
+
+
+  </script>
+</body>
+</div>
