@@ -61,16 +61,16 @@
                     .domain(d3.extent(data, function(d) { return d.Date; }))
                     .range([ 0, 700 ]);
 
-          var xaxis = svg.append("g")
-                    .attr("transform", "translate(0," + 600 + ")")
-                    .call(d3.axisBottom(x));
+          //var xaxis = svg.append("g")
+          //          .attr("transform", "translate(0," + 600 + ")")
+           //         .call(d3.axisBottom(x));
           
-          xaxis.selectAll("line")
-             .style("stroke", "gray");
-          xaxis.selectAll("path")
-              .style("stroke", "gray");
-          xaxis.selectAll("text")
-              .style("fill", "gray");
+          //xaxis.selectAll("line")
+          //   .style("stroke", "gray");
+          //xaxis.selectAll("path")
+          //    .style("stroke", "gray");
+          //xaxis.selectAll("text")
+          //    .style("fill", "gray");
         
           // Y Axis
           const y = d3.scaleLinear()
@@ -107,12 +107,12 @@
           }
 
           // Manual x-axis
-          //svg.append("text")
-              //.datum(data)
-              //.attr("x", x(data[121].Date))
-              //.attr("y", 620)
-              //.text(data[121].Date.toLocaleString('default', { month: 'long' }))
-              //.style("font-size", "8px");
+          svg.append("text")
+              .datum(data)
+              .attr("x", x(data[121].Date))
+              .attr("y", 620)
+              .text(data[121].Date.toLocaleString('default', { month: 'long' }))
+              .style("font-size", "8px");
 
 
           // Add title
