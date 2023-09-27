@@ -61,7 +61,7 @@
                     .domain(d3.extent(data, function(d) { return d.Date; }))
                     .range([ 0, 700 ])
           var x_format = d3.axisBottom(x)
-                    .tickFormat(d3.timeFormat("%b"));
+                    .tickFormat(d3.timeFormat("%M"));
 ;
     
 
