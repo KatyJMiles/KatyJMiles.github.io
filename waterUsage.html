@@ -111,12 +111,12 @@
           }
 
           // Manual x-axis
-          //svg.append("text")
-          //    .datum(data)
-           //   .attr("x", x(data[121].Date))
-            //  .attr("y", 620)
-             // .text(data[121].Date.toLocaleString('default', { month: 'long' }))
-              //.style("font-size", "12px");
+          svg.append("text")
+              .datum(data)
+              .attr("x", x(data[121].Date))
+              .attr("y", 620)
+              .text(data[121].Date.format("%Y")
+              .style("font-size", "12px");
 
 
           // Add title
