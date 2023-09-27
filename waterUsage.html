@@ -114,8 +114,9 @@
           svg.append("text")
               .datum(data)
               .attr("x", x(data[121].Date))
-              .attr("y", 620)
+              .attr("y", 680)
               .text(data[121].Date.toLocaleString('default', { 'year': 'numeric'}))
+              .style("fill", "gray")
               .style("font-size", "12px");
 
 
