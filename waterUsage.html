@@ -115,7 +115,7 @@
               .datum(data)
               .attr("x", x(data[121].Date))
               .attr("y", 620)
-              .text(data[121].Date.format("%Y"))
+              .text(data[121].Date.toLocaleString('default', { year}))
               .style("font-size", "12px");
 
 
