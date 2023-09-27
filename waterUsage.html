@@ -69,12 +69,12 @@
                     .attr("transform", "translate(0," + 600 + ")")
                     .call(x_format);
           
-          //xaxis.selectAll("line")
-          //   .style("stroke", "gray");
-          //xaxis.selectAll("path")
-          //    .style("stroke", "gray");
-          //xaxis.selectAll("text")
-          //    .style("fill", "gray");
+          xaxis.selectAll("line")
+             .style("stroke", "gray");
+          xaxis.selectAll("path")
+              .style("stroke", "gray");
+          xaxis.selectAll("text")
+              .style("fill", "gray");
         
           // Y Axis
           const y = d3.scaleLinear()
