@@ -59,11 +59,15 @@
           // X Axis
           var x = d3.scaleTime()
                     .domain(d3.extent(data, function(d) { return d.Date; }))
-                    .range([ 0, 700 ]);
+                    .range([ 0, 700 ])
+                    .axisBottom()
+                    .tickFormat(d3.timeFormat("%b"));
+;
+    
 
           var xaxis = svg.append("g")
                     .attr("transform", "translate(0," + 600 + ")")
-                    .call(d3.axisBottom(x));
+                    .call(x);
           
           //xaxis.selectAll("line")
           //   .style("stroke", "gray");
