@@ -132,6 +132,25 @@
               .style("font-family", "gill sans, sans-serif")
               .style("fill", "gray"); 
 
+
+              const mouseover = (event, d) => {
+                tooltip.style("opacity", 1);
+              };
+
+              const mouseleave = (event, d) => {
+                tooltip.style('opacity', 0);
+              }
+
+              const mousemove = (event, d) => {
+                const text = d3.select('.tooltip-area__text');
+                text.text(`${d["Total Actual Demand (MGD)"]}`);
+                const [x, y] = d3.pointer(event);
+
+                tooltip
+                  .attr('transform', `translate(${x}, ${y})`);
+              };
+
+
           // Add actual water usage time series
           svg.append("path")
               .datum(data)
@@ -140,25 +159,15 @@
               .attr("stroke-width", 1.5)
               .style("opacity", 0.5)
               .attr("d", d3.line()
-                .defined(function(d) { return d.Actual != 0; }) // added this line
+                .defined(function(d) { return d.Actual != 0; }) // don't plot days with 0 MGD
                 .x(function(d) { return x(d.Date) })
                 .y(function(d) { return y(d.Actual) })
               )
-              .on("mouseover", function(data){ 
-                       console.log(data.Date)
-                        return tooltip.style("visibility", "visible");
-                      })
-              .on("mousemove", function(event, d){
-                    tooltip.html(
-                      `<div style="text-align: center; font-weight: bold; font-size: 120%;">Hey</div>`
-                    );
-                    console.log(d.Date)
-                    return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+5)+"px");
-                  })
-                  // Add ability to highlight individual date when hovered over 
-              .on("mouseout", function(d){
-                    return tooltip.style("visibility", "hidden");
-              });
+              .on("mousemove", mousemove)
+              .on("mouseleave", mouseleave)
+              .on("mouseover", mouseover);
+
+              
 
 
           // Add projected water usage time series
