@@ -95,8 +95,8 @@
           var start = 121
           var end = 304
           for (let i = 0; i < 4; i++) {
-            if (end >= length(data.Date)) {
-              end = length(data.Date) - 1
+            if (end >= data.Date.length) {
+              end = data.Date.length - 1
             }
             console.log(data[start].Date);
             console.log(data[end].Date);
