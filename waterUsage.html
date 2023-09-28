@@ -144,7 +144,7 @@
               const mousemove = (event, d) => {
                 const text = d3.select('.tooltip-area__text');
                 text.text(`${d.Actual}`);
-                const [x, y] = d3.pointer(event);
+                const [x, y] = d3.mouse(event);
 
                 tooltip
                   .attr('transform', `translate(${x}, ${y})`);
