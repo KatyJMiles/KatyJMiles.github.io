@@ -44,10 +44,6 @@
 
           
           console.log(dayOfYear(data[10].Date));
-          const tooltip = d3.selectAll("#myplot").append("div")
-                            .attr("class", "svg-tooltip")
-                              .style("position", "absolute")
-                              .style("visibility", "hidden") 
 
           // Append SVG Object to the Page
           const svg = d3.select("#myPlot")
@@ -131,6 +127,9 @@
               .style("font-size", "27px")
               .style("font-family", "gill sans, sans-serif")
               .style("fill", "gray"); 
+
+              var tooltip = d3.select('.tooltip-area')
+                  .style('opacity', 0);
 
 
               const mouseover = (event, d) => {
