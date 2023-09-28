@@ -140,6 +140,7 @@
               .attr("stroke-width", 1.5)
               .style("opacity", 0.5)
               .attr("d", d3.line()
+                .defined(function(d) { return d.Actual != 0; }) // added this line
                 .x(function(d) { return x(d.Date) })
                 .y(function(d) { return y(d.Actual) })
               )
