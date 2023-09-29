@@ -4,9 +4,12 @@ import pandas as pd
 import requests
 from datetime import datetime
 
-url = "https://opendata.fcgov.com/resource/ia5t-gxxe.json"
-data = pd.read_json(url)\
+from statsmodels.tsa.seasonal import STL
 
-data.to_csv("Data/City_of_Fort_Collins_Water_Demand.csv")
+data = pd.read_csv("water_data.csv")
+stl = STL(data["Total Actual Demand (MGD)"], seasonal=13, period = 12)
+res = stl.fit()
+fig = res.plot()
+print(fig)
 
   
