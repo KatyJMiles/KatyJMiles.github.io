@@ -193,6 +193,14 @@
                         .attr("stroke-width",1)  
                         .attr("marker-end","url(#arrow)");  
 
+          // Add curly brackey
+          var brackey = svg.append("text")
+                        .attr("x",755)  
+                        .attr("y",4) 
+                        .text("&#65079");
+
+
+
           // Add text on sprinkler season
           var sprinkler_text = svg.append("text")
                         .attr("x",700)  
