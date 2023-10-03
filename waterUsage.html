@@ -8,7 +8,7 @@
   </head>
 <script src="//d3js.org/d3.v6.js"></script>
 <body>
-  <svg id="myPlot" style="display: block; margin: auto">
+  <svg id="myPlot" style="width:1000px;height:900px;margin:10px;">
     <defs>
       <marker
         id="arrow"
@@ -196,7 +196,7 @@
           // Add curly bracket
           var bracket = svg.append("text")
                         .datum(data)
-                        .attr("x", x(data[100].Date))
+                        .attr("x", x(data[1000].Date))
                         .attr("y",1)
                         .style("font-size", "20px")
                         .style("fill", "grey") 
