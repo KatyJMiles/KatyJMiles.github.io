@@ -187,14 +187,14 @@
                 //)
           
           // Draw arrow
-          var line = svg.append("line")
-                        .attr("x1",755)  
-                        .attr("y1",4)  
-                        .attr("x2",670)  
-                        .attr("y2",40)  
-                        .attr("stroke","gray")  
-                        .attr("stroke-width",1)  
-                        .attr("marker-end","url(#arrow)");  
+          //var line = svg.append("line")
+          //              .attr("x1",755)  
+          //              .attr("y1",4)  
+          //              .attr("x2",670)  
+          //              .attr("y2",40)  
+          //              .attr("stroke","gray")  
+          //              .attr("stroke-width",1)  
+          //              .attr("marker-end","url(#arrow)");  
 
           // Add curly bracket
           //var bracket = svg.append("text")
@@ -217,7 +217,7 @@
 
           // Add text on sprinkler season
           var sprinkler_text = svg.append("text")
-                        .attr("x",700)  
+                        .attr("x",x(data[1119].Date))  
                         .attr("y",1)
                         .style("font-size", "15px")
                         .text("Sprinkler Season")
