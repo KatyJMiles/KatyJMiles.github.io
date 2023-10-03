@@ -196,9 +196,9 @@
           // Add curly bracket
           var bracket = svg.append("text")
                         .datum(data)
-                        .attr("x", x(data[1000].Date))
+                        .attr("x", x(data[1200].Date))
                         .attr("y",1)
-                        .style("font-size", "100px")
+                        .style("font-size", "75px")
                         .style("fill", "grey") 
                         .text('\u{FE37}');
 
@@ -208,7 +208,7 @@
           var sprinkler_text = svg.append("text")
                         .attr("x",700)  
                         .attr("y",1)
-                        .style("font-size", "30px")
+                        .style("font-size", "15px")
                         .text("Sprinkler Season")
                         .style("font-family", "gill sans, sans-serif")
                         .style("fill", "gray"); 
