@@ -96,7 +96,7 @@
             svg.append("rect")
               .datum(data)
               .attr("x", x(data[start].Date))
-              .attr("y", 10)
+              .attr("y", 25)
               .attr("width", x(data[end].Date) - x(data[start].Date))
               .attr("height", 590)
               .attr("fill", "#CFE5CA")
@@ -111,7 +111,7 @@
             svg.append("text")
                 .datum(data)
                 .attr("x", x(data[year_index].Date))
-                .attr("y", 650)
+                .attr("y", 665)
                 .text(data[year_index].Date.toLocaleString('default', { 'year': 'numeric'}))
                 .style("fill", "gray")
                 .style("font-size", "18px");
@@ -197,7 +197,7 @@
           var bracket = svg.append("text")
                         .datum(data)
                         .attr("x", x(data[1200].Date))
-                        .attr("y",1)
+                        .attr("y",15)
                         .style("font-size", "75px")
                         .style("fill", "grey") 
                         .text('\u{FE37}');
