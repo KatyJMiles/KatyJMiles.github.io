@@ -202,13 +202,14 @@
                         .style("fill", "grey") 
                         .text('\u{FE37}');
 
-          svg.append("image")
-            .attr('x', 9)
-            .attr('y', 12)
-            .attr('width', 20)
-            .attr('height', 24)
-            .attr("xlink:href", "bracket.png")
- 
+          // Add hand drawn bracket
+          var hand = svg.append("image")
+                        .attr('x', 9)
+                        .attr('y', 12)
+                        .attr('width', 20)
+                        .attr('height', 24)
+                        .attr("xlink:href", "bracket.png");
+            
 
 
 
