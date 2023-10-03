@@ -61,7 +61,7 @@
     
 
           var xaxis = svg.append("g")
-                    .attr("transform", "translate(0," + 600 + ")")
+                    .attr("transform", "translate(0," + 615 + ")")
                     .call(x_format);
           
           xaxis.selectAll("line")
@@ -205,8 +205,8 @@
           // Add hand drawn bracket
           var hand2 = svg.append("image")
                         .attr('x', x(data[1200].Date))
-                        .attr('y', 12)
-                        .attr('width', 100)
+                        .attr('y', 7)
+                        .attr('width', 120)
                         .attr('height', 100)
                         .attr("href", "bracket.png");
 
