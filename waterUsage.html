@@ -202,10 +202,12 @@
                         .style("fill", "grey") 
                         .text('\u{FE37}');
 
-          var img = document.createElement("img"); 
-          img.src = "bracket.png"; 
-            
-          svg.appendChild(img); 
+          nodeEnter.append("svg:image")
+            .attr('x', 9)
+            .attr('y', 12)
+            .attr('width', 20)
+            .attr('height', 24)
+            .attr("xlink:href", "bracket.png")
  
 
 
