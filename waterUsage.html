@@ -73,8 +73,8 @@
         
           // Y Axis
           const y = d3.scaleLinear()
-            .domain([15, 45])
-            .range([ 600, 10]);
+            .domain([0, 45])
+            .range([ 600, 15]);
           
           var yaxis = svg.append("g")
             .call(d3.axisLeft(y));
