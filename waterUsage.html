@@ -29,98 +29,207 @@
   </svg>
   <script>
 
- d3.csv("joined_df.csv", function(data) {
-   return{
-    
 
 
-    // Set the x-axis labels to Monthly abbreviations
-    let tickLabels = ["Jan", "Feb", "March", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
+ d3.csv("water_data.csv", function(d) {
+      return {
+          Date : d3.timeParse("%Y/%m/%d")(d.Date),
+          Actual: +d["Total Actual Demand (MGD)"],
+          Projected : +d["Total Projected Demand (MGD)"],
+                };
+            }).then(function(data) {
+              console.log(data);
 
-    // Create a linear x-axis scale (0 = Jan, 11 = Dec)
-    const x = d3.scaleLinear()
-    .range([40, 620])
-        .domain([0, 11]);
+              var dayOfYear = function(now) {
+                var start = new Date(now.getFullYear(), 0, 0);
+                var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+                var oneDay = 1000 * 60 * 60 * 24;
+                var day = Math.floor(diff / oneDay);
+                return day;
+              }
 
-    // Create a linear y-axis scale that ranges from the min to max data input
-    const y = d3.scaleLinear()
-        .domain([d3.min(data, d => d.min), d3.max(data, d => d.max)])
-        .range([370, 20]);
+          
+          console.log(dayOfYear(data[10].Date));
 
-    // Create an svg container for the visualization
-    const svg = d3.select("#myPlot")
+          // Append SVG Object to the Page
+          const svg = d3.select("#myPlot")
             .append("svg")
             .append("g")
             .attr("transform","translate(" + 40 + "," + 40 + ")");
+          
+          // X Axis
+          var x = d3.scaleTime()
+                    .domain(d3.extent(data, function(d) { return d.Date; }))
+                    .range([ 0, 700 ])
+          var x_format = d3.axisBottom(x)
+                    .tickFormat(d3.timeFormat("%B"));
+;
+    
 
-    //Create a color scale for the forecasted probabilities
-    var color_scale = d3.scaleQuantize()
-    .domain([0, 100])
-    .range(["#F5F1A0", "#D4EAC3", "#ACC8DC", "#06667E"]); //yellow, green, light blue, blue
+          var xaxis = svg.append("g")
+                    .attr("transform", "translate(0," + 615 + ")")
+                    .call(x_format);
+          
+          xaxis.selectAll("line")
+             .style("stroke", "gray");
+          xaxis.selectAll("path")
+              .style("stroke", "gray");
+          xaxis.selectAll("text")
+              .style("fill", "gray");
+        
+          // Y Axis
+          const y = d3.scaleLinear()
+            .domain([0, 45])
+            .range([ 615, 30]);
+          
+          var yaxis = svg.append("g")
+            .call(d3.axisLeft(y));
 
-    // Define a function for the normal cdf in order to calculate the forecasted probabilites
-    function normalcdf(mean, sigma, to) {
-        var z = (to-mean)/Math.sqrt(2*sigma*sigma);
-        var t = 1/(1+0.3275911*Math.abs(z));
-        var a1 =  0.254829592;
-        var a2 = -0.284496736;
-        var a3 =  1.421413741;
-        var a4 = -1.453152027;
-        var a5 =  1.061405429;
-        var erf = 1-(((((a5*t + a4)*t) + a3)*t + a2)*t + a1)*t*Math.exp(-z*z);
-        var sign = 1;
-        if(z < 0) {
-            sign = -1; 
-        }
-        return (1/2)*(1+sign*erf)*100;
-    }
+          yaxis.selectAll("line")
+             .style("stroke", "gray");
+          yaxis.selectAll("path")
+              .style("stroke", "gray");
+          yaxis.selectAll("text")
+              .style("fill", "gray");
 
-    // Visualization code
+            
+          // Draw background grid
+          var start = 121
+          var end = 304
+          for (let i = 0; i < 4; i++) {
+            console.log(data[start].Date);
+            console.log(data[end].Date);
+            svg.append("rect")
+              .datum(data)
+              .attr("x", x(data[start].Date))
+              .attr("y", 25)
+              .attr("width", x(data[end].Date) - x(data[start].Date))
+              .attr("height", 590)
+              .attr("fill", "#CFE5CA")
+              .style("opacity", 0.4);
+            start = start + 365
+            end = end + 365
+          }
 
-    // Append the x-axis 
-    svg.append("g")
-        .attr("transform", `translate(0,${height - marginBottom})`)
-        .call(d3.axisBottom(x).tickFormat((d,i) => tickLabels[i]));
+          // Manual x-axis
+          var year_index = 0
+          for (let i = 0; i < 4; i++) {
+            svg.append("text")
+                .datum(data)
+                .attr("x", x(data[year_index].Date))
+                .attr("y", 665)
+                .text(data[year_index].Date.toLocaleString('default', { 'year': 'numeric'}))
+                .style("fill", "gray")
+                .style("font-size", "18px");
+            year_index = year_index + 370
+          }
 
-    // Append the y-axis
-    svg.append("g")
-        .attr("transform", `translate(${marginLeft},0)`)
-        .call(d3.axisLeft(y));
 
-    // Append the top tercile 
-    svg.append("g")
-        .selectAll("rect")
-        .data(data)
-        .join("rect")
-        .attr("fill", d => color_scale(normalcdf(d.monthly_avg, Math.sqrt(d.monthly_var), d.max) - normalcdf(d.monthly_avg, Math.sqrt(d.monthly_var), d.third)))
-        .attr("x", d => x(d.Month))
-        .attr("y", d => y(d.max))
-        .attr("width", 3)
-        .attr("length", d => y(d.third) - y(d.max))
+          // Add title
+          svg.append("text")
+              .text("Fort Collins Water Usage")
+              .attr("x",200)  
+              .attr("y",0)
+              .style("font-size", "27px")
+              .style("font-family", "gill sans, sans-serif")
+              .style("fill", "gray"); 
 
-    // Append the middle tercile 
-    svg.append("g")
-        .selectAll("rect")
-        .data(data)
-        .join("rect")
-        .attr("fill", d => color_scale(normalcdf(d.monthly_avg, Math.sqrt(d.monthly_var), d.third) - normalcdf(d.monthly_avg, Math.sqrt(d.monthly_var), d.second)))
-        .attr("x", d => x(d.Month))
-        .attr("y", d => y(d.third))
-        .attr("width", 3)
-        .attr("length", d => y(d.second) - y(d.third))
+              var tooltip = d3.select('.tooltip-area')
+                  .style('opacity', 0);
 
-    // Append the bottom tercile
-    svg.append("g")
-        .selectAll("rect")
-        .data(data)
-        .join("rect")
-        .attr("fill", d => color_scale(normalcdf(d.monthly_avg, Math.sqrt(d.monthly_var), d.second) - normalcdf(d.monthly_avg, Math.sqrt(d.monthly_var), d.min)))
-        .attr("x", d => x(d.Month))
-        .attr("y", d => y(d.second))
-        .attr("width", 3)
-        .attr("length", d => y(d.min) - y(d.second))
+
+              const mouseover = (event, d) => {
+                tooltip.style("opacity", 1);
+                console.log(d.Actual);
+              };
+
+              const mouseleave = (event, d) => {
+                tooltip.style('opacity', 0);
+              }
+
+              const mousemove = (event, d) => {
+                const text = d3.select('.tooltip-area__text');
+                text.text(`${d.Actual}`);
+                const [x, y] = d3.pointer(event);
+
+                tooltip
+                  .attr('transform', `translate(${x}, ${y})`);
+              };
+
+
+          // Add actual water usage time series
+          svg.append("path")
+              .datum(data)
+              .attr("fill", "none")
+              .attr("stroke", "#318932")
+              .attr("stroke-width", 1.5)
+              .style("opacity", 0.5)
+              .attr("d", d3.line()
+                .defined(function(d) { return d.Actual != 0; }) // don't plot days with 0 MGD
+                .x(function(d) { return x(d.Date) })
+                .y(function(d) { return y(d.Actual) })
+                  
+              ) 
+              .on("mousemove", mousemove)
+              .on("mouseleave", mouseleave)
+              .on("mouseover", mouseover);
+
+              
+
+
+          // Add projected water usage time series
+          //
+          //svg.append("path")
+          //    .datum(data)
+          //    .attr("fill", "none")
+          //    .attr("stroke", "#566C7C")
+          //    .attr("stroke-width", 1.5)
+          //    .attr("d", d3.line()
+          //      .x(function(d) { return x(d.Date) })
+          //      .y(function(d) { return y(d.Projected) })
+                //)
+          
+          // Draw arrow
+          //var line = svg.append("line")
+          //              .attr("x1",755)  
+          //              .attr("y1",4)  
+          //              .attr("x2",670)  
+          //              .attr("y2",40)  
+          //              .attr("stroke","gray")  
+          //              .attr("stroke-width",1)  
+          //              .attr("marker-end","url(#arrow)");  
+
+          // Add curly bracket
+          //var bracket = svg.append("text")
+           //             .datum(data)
+           //             .attr("x", x(data[1200].Date))
+           //             .attr("y",15)
+             //           .style("font-size", "75px")
+               //         .style("fill", "grey") 
+                 //       .text('\u{FE37}');
+
+          // Add hand drawn bracket
+          var hand2 = svg.append("image")
+                        .attr('x', 560)
+                        .attr('y', -35)
+                        .attr('width', 135)
+                        .attr('height', 100)
+                        .attr("href", "bracket.png");
+
+
+
+          // Add text on sprinkler season
+          var sprinkler_text = svg.append("text")
+                        .attr("x",x(data[1200].Date))  
+                        .attr("y",1)
+                        .style("font-size", "15px")
+                        .text("Sprinkler Season")
+                        .style("font-family", "gill sans, sans-serif")
+                        .style("fill", "gray"); 
+
 
         });
+
 
 
 
