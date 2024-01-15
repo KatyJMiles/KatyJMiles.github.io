@@ -29,7 +29,8 @@
   </svg>
   <script>
 
- function renderTercile(data) {
+ d3.csv("joined_df.csv", function(data) {
+   return(
     const width = 640;
     const height = 400;
     const marginTop = 20;
@@ -124,10 +125,8 @@
         .attr("width", 3)
         .attr("length", d => y(d.min) - y(d.second))
 
-        return svg.node();
-}
+        });
 
-    renderTercile("joined_df.csv")
 
 
 
