@@ -47,7 +47,7 @@
 
     // Create a linear y-axis scale that ranges from the min to max data input
     const y = d3.scaleLinear()
-        .domain([d3.min(data, d => d.min), d3.max(joined_df, d => d.max)])
+        .domain([d3.min(data, d => d.min), d3.max(data, d => d.max)])
         .range([height - marginBottom, marginTop]);
 
     // Create an svg container for the visualization
