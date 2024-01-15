@@ -32,25 +32,20 @@
  d3.csv("joined_df.csv", function(data) {
    return{
     
-    var width = 640;
-    var height = 400;
-    var marginTop = 20;
-    var marginRight = 30;
-    var marginBottom = 30;
-    var marginLeft = 40;
+
 
     // Set the x-axis labels to Monthly abbreviations
     let tickLabels = ["Jan", "Feb", "March", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
     // Create a linear x-axis scale (0 = Jan, 11 = Dec)
     const x = d3.scaleLinear()
-    .range([marginLeft, width - marginRight])
+    .range([40, 620])
         .domain([0, 11]);
 
     // Create a linear y-axis scale that ranges from the min to max data input
     const y = d3.scaleLinear()
         .domain([d3.min(data, d => d.min), d3.max(data, d => d.max)])
-        .range([height - marginBottom, marginTop]);
+        .range([370, 20]);
 
     // Create an svg container for the visualization
     const svg = d3.select("#myPlot")
