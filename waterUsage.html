@@ -31,12 +31,13 @@
 
  d3.csv("joined_df.csv", function(data) {
    return(
-    const width = 640;
-    const height = 400;
-    const marginTop = 20;
-    const marginRight = 30;
-    const marginBottom = 30;
-    const marginLeft = 40;
+    
+    width = 640;
+    height = 400;
+    marginTop = 20;
+    marginRight = 30;
+    marginBottom = 30;
+    marginLeft = 40;
 
     // Set the x-axis labels to Monthly abbreviations
     let tickLabels = ["Jan", "Feb", "March", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"]
@@ -52,11 +53,10 @@
         .range([height - marginBottom, marginTop]);
 
     // Create an svg container for the visualization
-    const svg = d3.create("svg")
-        .attr("viewBox", [0, 0, width, height])
-        .attr("width", width)
-        .attr("height", height)
-        .attr("style", "max-width: 100%; height: auto;");
+    const svg = d3.select("#myPlot")
+            .append("svg")
+            .append("g")
+            .attr("transform","translate(" + 40 + "," + 40 + ")");
 
     //Create a color scale for the forecasted probabilities
     var color_scale = d3.scaleQuantize()
