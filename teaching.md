@@ -4,7 +4,8 @@
 
 ## Colorado State University
 - STAT 201: General Statistics - Graduate Teaching Assistant 
-- STAT 204: Statistics with Business Applications - Graduate Teaching Assistant 
+- STAT 204: Statistics with Business Applications - Graduate Teaching Assistant
+- STAR 511: Design and Data Analysis for Researchers I
 
 ## Awards
 - Second Place for Tutor of the Year: University of Illinois
